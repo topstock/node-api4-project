@@ -18,6 +18,8 @@ Your assignment page on Canvas should contain instructions for submitting this p
   - Edit the `package.json` file to add `"start"` and `"server"` scripts
   - Install `express`, `dotenv`, `cors`
   - Add support for environment variables using an `.env` file and the dotenv library, providing fallbacks in the code
+  An environment is the computer the software is running on. The developer is running it on their own computer - a development environment.  The company that uses it is the production environment.  A testing environment for the QA team.  The staging environment has to be the same as the production environment, same version of node etc.
+  
   - Flesh out the API:
 
     | Method | URL           | Description                                                                                         |
