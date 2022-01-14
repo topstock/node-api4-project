@@ -10,7 +10,7 @@ Your assignment page on Canvas should contain instructions for submitting this p
 
 ### Task 2: Minimum Viable Product
 
-- [ ] Build a simple API:
+- [X] Build a simple API:
 
   - Create a `.gitignore` file executing `npx gitignore node`
   - Create a `package.json` file executing `npm init --y`
@@ -19,7 +19,7 @@ Your assignment page on Canvas should contain instructions for submitting this p
   - Install `express`, `dotenv`, `cors`
   - Add support for environment variables using an `.env` file and the dotenv library, providing fallbacks in the code
   An environment is the computer the software is running on. The developer is running it on their own computer - a development environment.  The company that uses it is the production environment.  A testing environment for the QA team.  The staging environment has to be the same as the production environment, same version of node etc.
-  
+
   - Flesh out the API:
 
     | Method | URL           | Description                                                                                         |
