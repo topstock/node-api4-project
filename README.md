@@ -6,7 +6,7 @@ In this challenge, you will build a simple Express app and deploy it to Heroku.
 
 ### Task 1: Project Setup and Submission
 
-Your assignment page on Canvas should contain instructions for submitting this project. If you are still unsure, reach out to School Staff.
+Your assignment page on Canvas should contain instructions for submitting this project. If you are still unsure, reach out to School Staff: https://topstock-fillup-first-app.herokuapp.com/
 
 ### Task 2: Minimum Viable Product
 
@@ -41,3 +41,35 @@ Your assignment page on Canvas should contain instructions for submitting this p
 - Research how to avoid storing passwords as is in your array database.
 - Research how to grant access to `GET /api/users` only those clients that are registered and logged in.
 - Create a front-end piece inside the project containing a register/login form and the means to display users.
+
+// adding heroku as a remote: Heroku Deploying with Git
+
+start heroku-cli // $ heroku login
+add the remote // $ heroku git:remote -a topstock-fillup-first-app
+
+// from now on I can push to that remote to deploy! 
+ $ git push heroku main
+
+// check the logs for why it is crashing (like nodemon logs)
+ $ heroku logs -a topstock-fillup-first-app --tail
+
+## When building a react app within a heroku deployed api
+npx create-react-app client (the app will be nested in a client subfolder)
+
+in package.json add in scripts ... "heroku-postbuild": "cd client && npm i && npm run build" 
+ heroku finds it and runs these operations
+
+// in index.js 
+
+3|const path = require('path') //this is of node itself
+4|server.use(express.static(path.join(__dirname, 'client/build')))
+
+so when the build subfolder //which is in .gitignore.  
+
+Add the endpoint for the anything that doesn't come from the database, like a react app
+|server.get('*', (req,res) => {
+|..res.sendFile(path.join(__dirname, 'client/build', index.html))
+|})
+
+
+add a script "heroku
